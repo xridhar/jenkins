@@ -10,10 +10,9 @@ pipeline {
       }
     }
     stage('Front-end') {
-      agent {
-        docker { image 'angular:latest' }
-      }
+      
       steps {
+        sh 'npm install -g @angular/cli'
         sh 'ng --version'
       }
     }
