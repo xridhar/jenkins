@@ -10,7 +10,7 @@ pipeline {
       }
     }
     stage('Front-end') {
-      
+      agent any
       steps {
         sh 'npm install -g @angular/cli'
         sh 'ng --version'
