@@ -1,0 +1,21 @@
+pipeline {
+  agent none
+  stages {
+    stage('Back-end') {
+      agent {
+        docker { image 'node:18-alpine' }
+      }
+      steps {
+        sh 'node --version'
+      }
+    }
+    stage('Front-end') {
+      agent {
+        docker { image 'angular:latest' }
+      }
+      steps {
+        sh 'ng --version'
+      }
+    }
+  }
+}
